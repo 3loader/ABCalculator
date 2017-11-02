@@ -12,6 +12,10 @@ function calculate() {
         alert('There must be at least 15 control trials for this tool to produce any results.');
         return;
     }
+    if (ccVal > cvVal || vcVal > vvVal) {
+        alert('Numbers of conversions should not be bigger than numbers of visitors');
+        return;
+    }
 
     var params = $.param({
         control_visitors: cvVal,
@@ -23,7 +27,6 @@ function calculate() {
 
     $.ajax(url)
         .done(function(data) {
-            data = JSON.parse(data);
             $('.results').show();
             $('#p_value').text(data.p_value);
             $('#significance').text(data.significance);

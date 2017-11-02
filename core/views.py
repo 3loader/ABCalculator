@@ -1,7 +1,7 @@
-import json
 import math
 
-from django.http import HttpResponse
+from django.http import JsonResponse
+
 
 # Create your views here.
 
@@ -26,8 +26,9 @@ def calculate(request):
             p_value = round(1 - ((1 + math.erf(z_score / math.sqrt(2))) / 2), 3)
             data['p_value'] = p_value
 
+            # 95% percent significance
             if p_value > 0.95 or p_value < 0.05:
                 data['significance'] = 'Yes!'
         except ValueError:
             pass
-    return HttpResponse(json.dumps(data))
+    return JsonResponse(data)
