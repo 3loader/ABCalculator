@@ -1,1 +1,1 @@
-web: gunicorn Significance_calculator.wsgi
+web: gunicorn SignificanceCalc.wsgi
