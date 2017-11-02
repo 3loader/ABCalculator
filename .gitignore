@@ -38,4 +38,6 @@ logs/
 # celery
 celerybeat-schedule
 
+db.sqlite3
+
 SignificanceCalc/staticfiles
