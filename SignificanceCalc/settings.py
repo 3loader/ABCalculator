@@ -40,7 +40,7 @@ FILE_UPLOAD_TEMP_DIR = [
 SECRET_KEY = '&3(kl2%p+76p5d$xrjn85g43p=!329d$y-yb7^_mxzo@op=1d1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://significance-calculator.herokuapp.com', 'localhost']
 
