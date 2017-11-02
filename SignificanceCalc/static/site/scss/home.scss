@@ -1,3 +1,209 @@
-* {
-    box-sizing: border-box;
+.top {
+    background: #dbe0ea url(https://d5bygqdtbohob.cloudfront.net/wp-content/themes/vwo/images/free-tools/ft-title-header-bg.svg) no-repeat;
+    background-size: cover;
+    background-position: center right;
+
+    @media only screen and (max-width: 768px) {
+        background-size: 150%;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 5rem 2.5rem;
+        max-width: 1200px;
+    }
+
+    &--image {
+        img {
+            margin-bottom: 1.875rem;
+        }
+    }
+
+    &--subtitle {
+        p {
+            font-size: 14px;
+            margin-top: 0;
+            text-align: center;
+        }
+    }
+}
+
+.form {
+    &__wrapper {
+        padding: 6.25rem 2.5rem;
+        max-width: 1200px;
+
+        @media only screen and (max-width: 768px) {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+    }
+
+    &--title {
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+
+    &--table {
+        &__wrapper {
+            margin-top: calc(2.5rem + 20px);
+            justify-content: center;
+
+            > div {
+                border-radius: 2px;
+                border: 1px solid #d5d8dc;
+                padding-right: 7px;
+                padding-left: 7px;
+            }
+
+        }
+
+        &--headers {
+            display: flex;
+            justify-content: flex-end;
+
+            > div {
+                text-align: center;
+                padding-top: 1.25rem;
+                padding-bottom: 0.625rem;
+            }
+        }
+
+        &--visitors {
+
+            > div {
+                text-align: center;
+                padding: 0.625rem 0.5rem;
+            }
+        }
+
+        &--conversions {
+            @media only screen and (max-width: 768px) {
+                margin-top: 1.875rem;
+            }
+
+            > div {
+                text-align: center;
+                padding: 0.625rem 0.5rem 1.25rem;
+            }
+        }
+
+        &--header {
+            @media only screen and (max-width: 768px) {
+                padding-bottom: 0!important;
+            }
+        }
+    }
+
+    &--button {
+        margin-top: 3.125rem;
+        text-align: center;
+
+        .btn {
+            background-color: #3892e3;
+            color: #fff;
+        }
+    }
+}
+
+.results {
+    display: none;
+    max-height: 400px;
+    background: #32425b;
+    overflow: hidden;
+    transition: all 800ms cubic-bezier(0.215,0.61,0.355,1);
+    position: relative;
+
+    &:before {
+        content: '';
+        background: url(https://d5bygqdtbohob.cloudfront.net/wp-content/themes/vwo/images/L2-down-arrow.png);
+        width: 93px;
+        height: 39px;
+        position: absolute;
+        left: calc(50% - 46px);
+        top: -1;
+        z-index: 1;
+    }
+
+    &__wrapper {
+        padding-bottom: 6.25rem;
+        padding-top: 6.25rem;
+        max-width: 1200px;
+
+        > .row {
+            margin-left: 0;
+            margin-right: 0;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &--box {
+        padding: 0;
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
+        flex-direction: column;
+        display: flex;
+        border-radius: 3px;
+        overflow: hidden;
+
+        &:last-of-type {
+            @media only screen and (max-width: 768px) {
+                margin-top: 1.25rem;
+            }
+        }
+
+        &--top {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            padding: calc(1.25rem + 14px) 0.5rem;
+            flex-grow: 1;
+            max-width: 100%;
+            min-height: 121px;
+            justify-content: center;
+
+            @media only screen and (max-width: 768px) {
+                padding: 0.625rem;
+                min-height: 0;
+            }
+
+            p {
+                text-align: center;
+                margin: 0;
+                font-size: 21px
+            }
+
+            span {
+                margin: 0;
+                font-size: 0.8125rem;
+                text-align: center;
+            }
+        }
+
+        &--bottom {
+            padding: 1.25rem 0;
+
+            @media only screen and (max-width: 768px) {
+                padding: 0.625rem;
+            }
+
+            p {
+                text-align: center;
+                font-size: 1.5rem;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+
+                @media only screen and (max-width: 768px) {
+                    padding: 0;
+                    margin: 0;
+                    font-size: 21px
+                }
+            }
+        }
+    }
 }
