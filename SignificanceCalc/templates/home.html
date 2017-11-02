@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load sass_tags %}
+{% load static %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% sass_src "site/scss/home.scss" %}" type="text/css"/>
+{% endblock %}
+
+{% block js %}
+  <script src="{% static "site/js/home.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="top">
+    <div class="top__wrapper container-fluid">
+      <div class="top--image">
+        <picture>
+          <source srcset="https://d5bygqdtbohob.cloudfront.net/wp-content/themes/vwo/images/free-tools/icon-significance-calc.webp, https://d5bygqdtbohob.cloudfront.net/wp-content/themes/vwo/images/free-tools/icon-significance-calc@2x.webp 2x" type="image/webp">
+          <img src="https://d5bygqdtbohob.cloudfront.net/wp-content/themes/vwo/images/free-tools/icon-significance-calc.png" srcset="https://d5bygqdtbohob.cloudfront.net/wp-content/themes/vwo/images/free-tools/icon-significance-calc@2x.png 2x" alt="Significance Calculator in VWO">
+        </picture>
+      </div>
+      <div class="top--title"><h2 class="title">A/B split test significance calculator</h2></div>
+      <div class="top--subtitle"><p>Get comprehensive insights about testing, optimization, UX, design, and more.</p></div>
+    </div>
+  </div>
+  <div class="form">
+    <div class="form__wrapper container-fluid">
+      <div class="form--title"><h2 class="title">Are your results significant?</h2></div>
+      <div class="form--table">
+        <div class="row form--table__wrapper">
+          <div class="col-lg-9">
+            <div class="row form--table--headers">
+              <div class="col-lg-4 col-md-4 mobile-hide bg-grey color-orange form--table--header">Control</div>
+              <div class="col-lg-4 col-md-4 mobile-hide bg-grey color-blue form--table--header">Variation</div>
+            </div>
+            <div class="row form--table--visitors">
+              <div class="col-lg-4 col-md-4">Number of Visitors</div>
+              <div class="col-lg-12 desktop-hide color-orange bg-grey form--table--header">Control</div>
+              <div class="col-lg-4 col-md-4 bg-grey input__wrapper"><input type="number" id="control_visitors"></div>
+              <div class="col-lg-4 col-md-4 desktop-hide color-blue bg-grey form--table--header">Variation</div>
+              <div class="col-lg-4 col-md-4 bg-grey input__wrapper"><input type="number" id="variation_visitors"></div>
+            </div>
+            <div class="row form--table--conversions">
+              <div class="col-lg-4 col-md-4">Number of Conversions</div>
+              <div class="col-lg-12 desktop-hide color-orange bg-grey form--table--header">Control</div>
+              <div class="col-lg-4 col-md-4 bg-grey input__wrapper"><input type="number" id="control_conversions"></div>
+              <div class="col-lg-4 col-md-4 desktop-hide color-blue bg-grey form--table--header">Variation</div>
+              <div class="col-lg-4 col-md-4 bg-grey input__wrapper"><input type="number" id="variation_conversions"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form--button">
+        <button onclick="calculate()" class="btn">Calculate Significance</button>
+      </div>
+    </div>
+  </div>
+  <div class="results">
+    <div class="results__wrapper container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 results--box">
+          <div class="results--box--top">
+            <p class="color-blue">P-Value</p>
+            <span class="">(Range from 0-1)</span>
+          </div>
+          <div class="results--box--bottom bg-grey">
+            <p class="color-black" id="p_value">NaN</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 results--box">
+          <div class="results--box--top">
+            <p class="color-blue">Significance</p>
+          </div>
+          <div class="results--box--bottom bg-grey">
+            <p class="color-black" id="significance">No</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
